@@ -10,7 +10,7 @@ return(
     <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style ={Style.container}>
     <View style={Style.top}>
     <Text style={Style.titulo}>
-        Empregos
+        Emprego
     </Text>
     </View>
 

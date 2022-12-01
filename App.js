@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { home, login, info1, info2, info3, minhaconta, sobre, curso, emprego, novidade, curriculo } from './assets/ela';
+import { home, login, info1, info2, info3, minhaconta, sobre, curso, emprego, novidade, curriculo, consultoria} from './assets/ela';
 
 <View>  </View>
 
@@ -14,15 +14,13 @@ export default function App() {
 
   return (
   <NavigationContainer>
+    <StatusBar backgroundColor="#ffa7ec" barStyle="light-content"/>
     <Stack.Navigator>
       <Stack.Screen 
         name = "Login" 
         component = {login}
         options={{
-          title: "            Bem-Vinda ao Para Elas",
-          headerTintColor:'#fff',
-          headerStyle:{backgroundColor:"#ffa7ec"},
-          headerTitleStyle:{fontWeight: 'bold', alignSelf:'center', alignItems:'center'},
+        headerShown: false,
         }}
       />
       <Stack.Screen

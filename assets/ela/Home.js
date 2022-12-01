@@ -4,16 +4,19 @@ import { View, Image, StyleSheet, KeyboardAvoidingView, Button, Text, TouchableO
 export default function home (props)
 {
     console.log(props);
+    const ops = () => {alert('Conteúdo não está pronto. Estamos trabalhado nisso :)')}
 
 return(
 
     <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style ={Style.container}>
 
     <View style={Style.top}>
-    <Image
-    style={Style.img}
-        source={require('../img/logo.png')
-    }/>
+        <View style={Style.bola}>
+            <Image
+            style={Style.img}
+                source={require('../img/logo.png')
+            }/>
+        </View>
     </View>
 
     <TouchableOpacity onPress= {()=>props.navigation.navigate('Curso')}>
@@ -72,6 +75,18 @@ return(
     </View>
     </TouchableOpacity>
 
+    <TouchableOpacity onPress= {()=>ops()}>
+    <View style={Style.botao}>
+        <Text style={Style.texto}>
+            Consultorias
+        </Text>
+        <Image 
+        style={Style.consul}
+        source={require('../img/png/consultoria_em_png.png')}
+        />
+    </View>
+    </TouchableOpacity>
+
     </KeyboardAvoidingView>
 );
 }
@@ -82,7 +97,7 @@ const Style = StyleSheet.create({
        backgroundColor: '#ffe7e7', 
        height: '100%',
        width: '100%',
-       marginTop: 30
+       marginTop: 0
     },
     logo_login:{
         marginBottom:10,
@@ -101,24 +116,33 @@ const Style = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         bottom: -40,
+        left: 10,
         
     },
     top:{
         backgroundColor: '#ffa7ec',
-        marginTop: 0,
+        marginTop: 20,
         width: '100%',
         height: '10%',
     },
     img:{
-        width: 190,
-        height: 90,
-        left: 120,
-        marginTop: -5,
+        width: '200%',
+        height: '100%',
+        marginTop: 5,
+        right: 5,
+        alignSelf: 'center',
     },
     cur:{
-        left: 250,
-        bottom: 37,
-        height: '100%',     
+        marginTop: -32,
+        height: '98%',  
+        alignSelf: 'flex-end',
+        right: 3  
+    },
+    consul:{
+        bottom: 40,
+        left: 270,
+        width: '35%',
+        height: '100%',
     },
     new:{
         left: 240,
@@ -131,5 +155,13 @@ const Style = StyleSheet.create({
     new3:{
         left: 280,
         bottom: 30,
-    }
+    },
+    bola:{
+        width: '18%',
+        height: '87%',
+        borderRadius: 300,
+        backgroundColor: '#FFF2F2',
+        alignItems: 'center',
+        alignSelf: 'center',
+    },
 });

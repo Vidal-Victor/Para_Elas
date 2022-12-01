@@ -1,11 +1,14 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { View, Image, StyleSheet, KeyboardAvoidingView, Button, Text, TouchableOpacity, TextInput} from 'react-native';
-import { AntDesign } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
 
 export default function minhaconta (props)
 {
     console.log(props);
-    
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [descrição, setDescrição] = useState('');
 return(
 
     <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style = {Style.container}>
@@ -17,18 +20,24 @@ return(
     </View>
 
     <View>
-    <AntDesign name="user" size={100} color="black" style={Style.user} />
+    <FontAwesome name="user-circle" size={100} color="#FFA0EA" style={Style.user} />
     </View>
 
     <View>
-        <TextInput style={Style.inpot} placeholder='Nome'/>
-        <TextInput style={Style.inpot} placeholder='E-mail'/>
-        <TextInput style={Style.inpot} placeholder='Descrição'/>
+        <TextInput style={Style.inpot} placeholder='Nome' onChangeText={text=>setNome(text)}/>
+        <View style={Style.line}/>
+        <TextInput style={Style.inpot} placeholder='E-mail' onChangeText={text=>setEmail(text)}/>
+        <View style={Style.line}/>
+        <TextInput secureTextEntry={true} style={Style.inpot} placeholder='Senha' onChangeText={text=>setSenha(text)}/>
+        <View style={Style.line}/>
+        <TextInput style={Style.inpot} placeholder='Descrição' onChangeText={text=>setDescrição(text)}/>
+        <View style={Style.line}/>
     </View>
 
-    <View style={Style.butao}>
-        <Button title="Confirmar" color="#9fb8ef" style={Style.butao} onPress= {()=>props.navigation.navigate('Sobre')}/>
-    </View>
+    <TouchableOpacity style = {Style.loginbutton} onPress= {()=>props.navigation.navigate('Sobre')}>
+        <View ><Text style = {Style.loginbunttonText}>Confirmar</Text></View>
+    </TouchableOpacity>
+    
     </KeyboardAvoidingView>
 
 );
@@ -41,9 +50,8 @@ const Style = StyleSheet.create({
         height: '100%',
     },
     inpot:{
-        marginBottom: 10,
         padding:7,
-
+        color: '#ccc'
     },
     user:{
         marginTop:30,
@@ -71,5 +79,25 @@ const Style = StyleSheet.create({
         alignItems:'center',
         borderRadius:10,
         width:'90%',
-    }
+    },
+    line:{
+        borderBottomColor:"#ccc",
+        borderBottomWidth: 2,
+        marginBottom: 10
+    },
+    loginbutton:{
+        marginTop: 200,
+        padding: 12,
+        backgroundColor: '#9FB8EF',
+        alignSelf:"center",
+        alignItems:'center',
+        borderRadius:50,
+        width:'57%',
+        
+        },
+        loginbunttonText:{
+        color:'#000',
+        fontWeight:'bold',
+        fontSize:15
+    },
 });

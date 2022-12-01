@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Image, StyleSheet, KeyboardAvoidingView, Button, Text, TouchableOpacity} from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
 
 export default function novidade (props)
 {
     console.log(props);
-
+    const ops = () =>{alert('Ainda não temos um site, mas espera que vamos ter 👍')}
 return(
 
     <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style ={Style.container}>
@@ -15,14 +16,14 @@ return(
     </Text>
     </View>
 
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => WebBrowser.openBrowserAsync('https://instagram.com/_paraelas.app?igshid=YmMyMTA2M2Y=')}>
     <View style={Style.botao1}>
-    <Image
-        style={Style.aimg}
-        source={require('../img/liveyt.png')}
-        />
+            <Image
+            style={Style.aimg}
+                source={require('../img/png/redes_em_png.png')
+            }/>
         <Text style={Style.texto1}>
-            Live sobre independência financeira
+            Visite nosso                  Instragram
         </Text>
         <Image 
         
@@ -30,14 +31,14 @@ return(
     </View>
     </TouchableOpacity>
 
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => ops()}>
     <View style={Style.botao}>
-    <Image
-        style={Style.aimg}
-        source={require('../img/consultoriaimagem.png')}
-        />
+            <Image
+            style={Style.aimg}
+                source={require('../img/png/empng1.png')
+            }/>
         <Text style={Style.texto}>
-            Guia de consultoria de imagem
+            Visite Nosso Site
         </Text>
         <Image 
         />
@@ -63,35 +64,37 @@ const Style = StyleSheet.create({
     },
     botao:{
         backgroundColor: '#9fb8ef',
-        marginTop: 20,
+        marginTop: -167,
         width: '98%',
-        height: 250,
+        height: '50%',
         left: 5,
         borderRadius: 15,
+        flexDirection: 'row'
     },
     botao1:{
         backgroundColor: '#9fb8ef',
         marginTop: 25,
         width: '98%',
-        height: 265,
+        height: '38%',
         left: 5,
         borderRadius: 15,
+        flexDirection: 'row'
     },
     texto:{
         fontSize: 25,
         fontWeight: 'bold',
         bottom: -40,
-        left: 8,
+        right: 20
     },
     texto1:{
         fontSize: 25,
         fontWeight: 'bold',
         bottom: -30,
-        left: 8,
+        right: 10
     },
     top:{
         backgroundColor: '#ffa7ec',
-        marginTop: 0,
+        marginTop: -10,
         width: '100%',
         height: '10%',
     },
@@ -108,10 +111,9 @@ const Style = StyleSheet.create({
         bottom: -10
      },
      aimg:{
-        width:'95%',
-        height:'60%',
-        bottom: -10,
-        left: 10,
-        alignItems: 'center',
+        width:'50%',
+        height:'100%',
+        alignItems: 'flex-start',
+        right: 10
     },
 });

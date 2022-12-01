@@ -4,16 +4,18 @@ import MapView from 'react-native-maps';
 
 export default function emprego (props){
     console.log(props);
+    const ops = () => {alert('Os empregos não podem ser acessados no momento :(')}
 
 return(
 
     <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style ={Style.container}>
+    
     <View style={Style.top}>
     <Text style={Style.titulo}>
         Empregos
     </Text>
     </View>
-
+    
     <MapView style={Style.map}
     initialRegion={{
         latitude: -21.4649759,
@@ -24,34 +26,67 @@ return(
     >
     </MapView>
 
-
-    <TouchableOpacity>
+    <ScrollView>
+    <TouchableOpacity onPress= {()=>ops()}>
     <View style={Style.botao}>
     <Image
         style={Style.aimg3}
-        source={require('../img/empresa.png')}
+        source={require('../img/png/gerente_png.png')}
         />
-        <Text style={Style.texto}>
-            Vagas para gerente                      Clique mais para ver
+        <View>
+        <Text style={Style.textot}>
+            Gerente
         </Text>
+        <Text style={Style.text}>
+            Vaga em N. Horizonte
+        </Text>
+        </View>
         <Image 
         />
     </View>
     </TouchableOpacity>
 
-    <TouchableOpacity>
+    <TouchableOpacity onPress= {()=>ops()}>
     <View style={Style.botao}>
     <Image
         style={Style.aimg}
-        source={require('../img/secretaria.png')}
+        source={require('../img/png/analista_png.png')}
         />
-        <Text style={Style.texto}>
-            Vagas para secretaria                  Clique mais para ver
+        <View>
+        <Text style={Style.textot}>
+        Analista de Sistemas
         </Text>
+        <Text style={Style.text}>
+        ⠀Vaga em Bauru
+        </Text>
+        </View>
         <Image 
         />
     </View>
     </TouchableOpacity>
+
+    <TouchableOpacity onPress= {()=>ops()}>
+    <View style={Style.botao}>
+    <Image
+        style={Style.aimg2}
+        source={require('../img/png/enfermeira_png.png')}
+        />
+        <View>
+        <Text style={Style.textot}>
+        Enfermeira
+        </Text>
+        <Text style={Style.text}>
+        Vaga em Catanduva
+        </Text>
+        </View>
+        <Image 
+        />
+    </View>
+    </TouchableOpacity>
+    <View>
+
+    </View>
+    </ScrollView>
     </KeyboardAvoidingView>
 );
 }
@@ -76,15 +111,21 @@ const Style = StyleSheet.create({
         height: 250,
         left: 5,
         borderRadius: 15,
+        justifyContent: 'space-between',
+        flexDirection: 'row'
+    },
+    textot:{
+        fontSize: 20,
+        marginTop: 100,
+        fontWeight: 'bold'
     },
     texto:{
-        fontSize: 25,
-        bottom: -30,
-        left: 100,
+        fontSize: 20,
+        marginTop: 100,
     },
     top:{
         backgroundColor: '#ffa7ec',
-        marginTop: 0,
+        marginTop: -10,
         width: '100%',
         height: '10%',
     },
@@ -121,22 +162,25 @@ const Style = StyleSheet.create({
         
      },
      aimg:{
-         width: 370,
-         left: 17,
-        height: 150,
+        width: '50%',
+        height: '98%',
         alignItems: 'center',
+        borderRadius: 50,
+        top: 10,
     },
     aimg2:{
-        width: '100%',
-       height: '100%',
-       alignItems: 'center',
+        width: '50%',
+        height: '90%',
+        alignItems: 'center',
+        borderRadius: 30,
     },
     aimg3:{
-        width: 1800,
-        left: -320,
-       height: 150,
+        width: '50%',
+       height: '75%',
        alignItems: 'center',
        borderRadius: 30,
+       top: 25,
+       
    },
    map:{
     marginTop: 20,

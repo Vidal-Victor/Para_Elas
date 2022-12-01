@@ -10,4 +10,5 @@ import emprego from './Emprego';
 import novidade from './Novidade';
 import curriculo from './Curriculo';
 
-export {home, login, info1, info2, info3, minhaconta, sobre, curso, emprego, novidade, curriculo}
+
+export {home, login, info1, info2, info3, minhaconta, sobre, curso, emprego, novidade, curriculo, }

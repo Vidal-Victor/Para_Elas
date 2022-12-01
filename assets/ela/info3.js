@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, KeyboardAvoidingView, Button, Text } from 'react-native';
+import { View, Image, StyleSheet, KeyboardAvoidingView, Button, Text, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons'; 
 
 
@@ -26,9 +26,9 @@ return(
         </Text>
     </View>
 
-    <View style={Style.bot}>
-        <Button title="Começar" onPress= {()=>props.navigation.navigate('Minhaconta')}/>
-    </View>
+    <TouchableOpacity style = {Style.loginbutton} onPress= {()=>props.navigation.navigate('Minhaconta')}>
+        <View ><Text style = {Style.loginbunttonText}>Próximo</Text></View>
+    </TouchableOpacity>
 
     <View style={Style.linha}>
     <Entypo name="circle" size={24} color="#FFFFFF" style={Style.bolinha}/>
@@ -56,7 +56,7 @@ const Style = StyleSheet.create({
         width: '40%',
         height: '25%',
         borderRadius: 300,
-        left: 130,
+        alignSelf: 'center',
     },
     textu:{
         marginTop: 25,
@@ -81,12 +81,23 @@ const Style = StyleSheet.create({
         left: -20,
     },
       linha:{
-        marginTop: 350,
+        marginTop: 347,
         flexDirection: 'row',
         alignSelf: 'center',
        },
-       bot:{
-           width: '50%',
-           alignSelf: 'center'
-       }
+       loginbutton:{
+      
+        padding: 12,
+        backgroundColor: '#FF34B2',
+        alignSelf:"center",
+        alignItems:'center',
+        borderRadius:50,
+        width:'57%',
+        
+        },
+        loginbunttonText:{
+        color:'#000',
+        fontWeight:'bold',
+        fontSize:15
+    },
 });

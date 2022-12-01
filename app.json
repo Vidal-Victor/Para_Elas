@@ -2,11 +2,11 @@
   "expo": {
     "name": "Para_Elas",
     "slug": "Para_Elas",
-    "version": "1.0.0",
+    "version": "0.20.7.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/img/logo_paraelas.png",
     "splash": {
-      
+      "image":"./assets/img/carregamento.png",     
       "resizeMode": "contain",
       "backgroundColor": "##ffa7ec"
     },

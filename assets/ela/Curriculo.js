@@ -4,6 +4,7 @@ import { View, Image, StyleSheet, KeyboardAvoidingView, Button, Text, TouchableO
 export default function curriculo (props)
 {
     console.log(props);
+    const ops = () => {alert('A função ainda não está disponivel.')}
 
 return(
 
@@ -15,7 +16,7 @@ return(
         </Text>
     </View>
 
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => ops()}>
     <View style={Style.botao}>
     <Image
         style={Style.aimg}
@@ -30,7 +31,7 @@ return(
     </View>
     </TouchableOpacity>
 
-    <TouchableOpacity>
+    <TouchableOpacity onPress= {()=> ops()}>
     <View style={Style.botao}>
     <Image
         style={Style.aimg}
@@ -73,11 +74,11 @@ const Style = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         bottom: -25,
-        left: 10,
+        alignSelf: 'center',
     },
     top:{
         backgroundColor: '#ffa7ec',
-        marginTop: 0,
+        marginTop: -10,
         width: '100%',
         height: '10%',
     },

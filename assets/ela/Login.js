@@ -1,18 +1,27 @@
 import React, {useState, useEffect} from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, Image, View, Platform, TouchableOpacity } from 'react-native';
-
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function login (props)
 {
     const [display, setDisplay]=useState( 'none');
     console.log(props);
-
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [descrição, setDescrição] = useState('');
 return(
+    <LinearGradient 
+    colors = {['#FFF2F2', '#ffa7ec']}
+    >
 <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style = {Style.container}>
-
+    
     <View style={Style.login_logomarca}>
-       
+    <Image
+    style={Style.logo_login}
+        source={require('../img/logo.png')
+    }/>
     </View>
     
 
@@ -41,8 +50,8 @@ return(
                 </Text>
             </View>
         </TouchableOpacity>
-   
  </KeyboardAvoidingView>
+ </LinearGradient>
 );
 }
 
@@ -68,13 +77,14 @@ const Style = StyleSheet.create({
     
     login_text:{
         marginTop:10,
-        alignSelf:"center",
+        left: 8.5,
         
     },
     login__input:{
         
         width: '98%',
         backgroundColor: '#F4F3F3',
+        left: 3,
         marginBottom: 10,
         padding:7,
         borderRadius:10,
@@ -86,7 +96,7 @@ const Style = StyleSheet.create({
     loginbutton:{
       
     padding: 12,
-    backgroundColor: "blue",
+    backgroundColor: '#9FB8EF',
     alignSelf:"center",
     alignItems:'center',
     borderRadius:10,
@@ -99,18 +109,19 @@ const Style = StyleSheet.create({
         fontSize:15
     },
     container_forgot:{
-        width:'90%',
+        width: '97.5%',
         alignItems:'flex-end',
     },
     forgotText:{
-        color:"#ffa7ec",
+        color:"#8FB8EF",
         fontWeight:'bold',
         marginBottom:10
     },
     
     container:{
-        backgroundColor: '#ffa7ec', 
+       /*backgroundColor: '#ffa7ec',*/ 
         height: '100%',
+        marginTop: 100,
     },
     texto:{
         fontSize: 20,

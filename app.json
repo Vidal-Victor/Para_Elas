@@ -4,9 +4,9 @@
     "slug": "Para_Elas",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/img/icon.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      
       "resizeMode": "contain",
       "backgroundColor": "##ffa7ec"
     },

@@ -12,10 +12,7 @@ return(
 <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style = {Style.container}>
 
     <View style={Style.login_logomarca}>
-        <Image
-        style ={Style.logo_login}
-        source={require('../img/icon.png')
-        }/>
+       
     </View>
     
 

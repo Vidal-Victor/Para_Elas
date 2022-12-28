@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Para_Elas",
-    "slug": "Para_Elas",
+    "name": "Para Elas",
+    "slug": "Para Elas",
     "version": "0.20.7.1",
     "orientation": "portrait",
     "icon": "./assets/img/logo_paraelas.png",
     "splash": {
       "image":"./assets/img/carregamento.png",     
       "resizeMode": "contain",
-      "backgroundColor": "##ffa7ec"
+      "backgroundColor": "#ffa7ec"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
